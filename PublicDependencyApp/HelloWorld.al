@@ -1,11 +1,7 @@
-﻿// Welcome to your new AL extension.
-// Remember that object names and IDs should be unique across all extensions.
-// AL snippets start with t*, like tpageext - give them a try and happy coding!
-
-pageextension 75000 CustomerListExt extends "Customer List"
+﻿codeunit 75000  "fkPublicDependency"
 {
-    trigger OnOpenPage();
+    procedure HelloWorld()
     begin
-        Message('App published: Hello world');
+        Message('Hello World from PublicDependencyApp!');
     end;
 }
