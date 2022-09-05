@@ -1,4 +1,4 @@
-﻿codeunit 75000  "fkPublicDependency"
+﻿codeunit 75000 "fkPublicDependency"
 {
     procedure HelloWorld()
     begin
