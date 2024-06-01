@@ -11,7 +11,7 @@ on:
 
 defaults:
   run:
-    shell: pwsh
+    shell: powershell
 
 permissions:
   contents: read
@@ -27,7 +27,7 @@ env:
 jobs:
   Initialization:
     needs: [ ]
-    runs-on: [ ubuntu-latest ]
+    runs-on: [ windows-latest ]
     outputs:
       telemetryScopeJson: ${{ steps.init.outputs.telemetryScopeJson }}
       environmentsMatrixJson: ${{ steps.DetermineDeploymentEnvironments.outputs.EnvironmentsMatrixJson }}
@@ -47,7 +47,7 @@ jobs:
       - name: Dump Workflow Information
         uses: freddydk/AL-Go/Actions/DumpWorkflowInfo@issue1093
         with:
-          shell: pwsh
+          shell: powershell
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -58,14 +58,14 @@ jobs:
         id: init
         uses: freddydk/AL-Go/Actions/WorkflowInitialize@issue1093
         with:
-          shell: pwsh
+          shell: powershell
           eventId: "DO0091"
 
       - name: Read settings
         id: ReadSettings
         uses: freddydk/AL-Go/Actions/ReadSettings@issue1093
         with:
-          shell: pwsh
+          shell: powershell
           get: type, powerPlatformSolutionFolder
 
       - name: Determine Workflow Depth
@@ -77,7 +77,7 @@ jobs:
         id: determineProjectsToBuild
         uses: freddydk/AL-Go/Actions/DetermineProjectsToBuild@issue1093
         with:
-          shell: pwsh
+          shell: powershell
           maxBuildDepth: ${{ env.workflowDepth }}
 
       - name: Determine PowerPlatform Solution Folder
@@ -90,7 +90,7 @@ jobs:
         id: DetermineDeliveryTargetSecrets
         uses: freddydk/AL-Go/Actions/DetermineDeliveryTargets@issue1093
         with:
-          shell: pwsh
+          shell: powershell
           projectsJson: '${{ steps.determineProjectsToBuild.outputs.ProjectsJson }}'
           checkContextSecrets: 'false'
 
@@ -98,7 +98,7 @@ jobs:
         id: ReadSecrets
         uses: freddydk/AL-Go/Actions/ReadSecrets@issue1093
         with:
-          shell: pwsh
+          shell: powershell
           gitHubSecrets: ${{ toJson(secrets) }}
           getSecrets: ${{ steps.DetermineDeliveryTargetSecrets.outputs.ContextSecrets }}
 
@@ -108,7 +108,7 @@ jobs:
         env:
           Secrets: '${{ steps.ReadSecrets.outputs.Secrets }}'
         with:
-          shell: pwsh
+          shell: powershell
           projectsJson: '${{ steps.determineProjectsToBuild.outputs.ProjectsJson }}'
           checkContextSecrets: 'true'
 
@@ -118,7 +118,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
-          shell: pwsh
+          shell: powershell
           getEnvironments: '*'
           type: 'CD'
 
