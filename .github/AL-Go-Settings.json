@@ -1,5 +1,6 @@
 {
   "type": "PTE",
   "templateUrl": "https://github.com/freddydk/AL-Go@issue1093",
-  "templateSha": "ed6aea5f12571802bc69c7d5028bd56d7b85550d"
+  "templateSha": "ed6aea5f12571802bc69c7d5028bd56d7b85550d",
+  "shell": "pwsh"
 }
