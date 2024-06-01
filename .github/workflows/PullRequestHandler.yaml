@@ -10,7 +10,7 @@ concurrency:
 
 defaults:
   run:
-    shell: powershell
+    shell: pwsh
 
 permissions:
   contents: read
@@ -46,7 +46,7 @@ jobs:
       - name: Dump Workflow Information
         uses: freddydk/AL-Go/Actions/DumpWorkflowInfo@issue1093
         with:
-          shell: powershell
+          shell: pwsh
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -58,14 +58,14 @@ jobs:
         id: init
         uses: freddydk/AL-Go/Actions/WorkflowInitialize@issue1093
         with:
-          shell: powershell
+          shell: pwsh
           eventId: "DO0104"
 
       - name: Read settings
         id: ReadSettings
         uses: freddydk/AL-Go/Actions/ReadSettings@issue1093
         with:
-          shell: powershell
+          shell: pwsh
 
       - name: Determine Workflow Depth
         id: DetermineWorkflowDepth
@@ -76,7 +76,7 @@ jobs:
         id: determineProjectsToBuild
         uses: freddydk/AL-Go/Actions/DetermineProjectsToBuild@issue1093
         with:
-          shell: powershell
+          shell: pwsh
           maxBuildDepth: ${{ env.workflowDepth }}
 
   Build:
@@ -115,4 +115,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
-          shell: powershell
+          shell: pwsh
