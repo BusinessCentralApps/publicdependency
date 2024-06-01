@@ -58,7 +58,7 @@ jobs:
         id: init
         uses: freddydk/AL-Go/Actions/WorkflowInitialize@issue1093
         with:
-          shell: powershell
+          shell: pwsh
           eventId: "DO0091"
 
       - name: Read settings
