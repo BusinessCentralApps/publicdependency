@@ -3,5 +3,7 @@
   "templateUrl": "https://github.com/freddydk/AL-Go@issue1093",
   "templateSha": "baf32705da5a5bd5b1b4ca6dacfaf6ec2ee8f3f2",
   "shell": "pwsh",
+  "useCompilerFolder": true,
+  "doNotPublishApps": true,
   "keyVaultCodesignCertificateName": "FreddyKristiansen"
 }
