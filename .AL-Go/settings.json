@@ -6,6 +6,6 @@
     "testFolders":  [
 
                     ],
-    "RepoVersion":  "2.0"
+    "RepoVersion":  "2.0",
     "artifact": "https://bcartifacts-exdbf9fwegejdqak.b02.azurefd.net/sandbox/24.1.18927.20351/us"
 }
