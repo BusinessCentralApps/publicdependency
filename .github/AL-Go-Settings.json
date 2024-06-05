@@ -5,5 +5,8 @@
   "shell": "pwsh",
   "useCompilerFolder": true,
   "doNotPublishApps": true,
-  "keyVaultCodesignCertificateName": "FreddyKristiansen"
+  "keyVaultCodesignCertificateName": "FreddyKristiansen",
+  "DeliverToStorage": {
+    "CreateContainerIfNotExist": true
+  }
 }
