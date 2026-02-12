@@ -8,5 +8,6 @@
   "_keyVaultCodesignCertificateName": "FreddyKristiansen",
   "DeliverToStorage": {
     "CreateContainerIfNotExist": true
-  }
+  },
+  "PullRequestTrigger": "pull_request"
 }
